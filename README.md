@@ -14,7 +14,6 @@ This web application predicts the **category** and **sub-category** of a crime b
 - [URLs](#urls)
   - [Train Endpoint](#train-endpoint)
   - [Predict Endpoint](#predict-endpoint)
-- [File Structure](#file-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -40,9 +39,50 @@ The Crime Data Prediction App uses a machine learning model to classify crime de
 
 ## Installation
 
-Follow these steps to set up the application:
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/imdeepakchahar/nlp.git
+    cd nlp
+    ```
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/crime-data-prediction.git
-   cd crime-data-prediction
+2. Create and activate a virtual environment(IF REQUIRED):
+    ```bash
+    python3 -m venv env
+    source env/bin/activate  # On Windows, use `env\Scripts\activate`
+    ```
+
+3. Install required packages:
+    ```bash
+    pip install MENTIONED_LIBRARIES_IN_main.py
+    ```
+
+4. Run the app:
+    ```bash
+    python main.py
+    ```
+
+## Usage
+
+### Training the Model
+1. Access the training endpoint to retrain models with updated data.
+    ```plaintext
+    http://127.0.0.1:5000/train
+    ```
+
+### Predicting Categories and Subcategories
+1. Use the prediction endpoint to classify input descriptions.
+    ```plaintext
+    http://127.0.0.1:5000/predict
+    ```
+
+Enter a description in the form provided, and view the predicted category and subcategory.
+
+## URLs
+- **Train Model**: `/train`
+- **Predict Crime Category**: `/predict`
+
+## Contributing
+Please refer to the GitHub repository for contribution guidelines.
+
+## License
+MIT License
