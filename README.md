@@ -1,4 +1,4 @@
-# Crime Data Prediction App
+# Fraud Category Prediction with Crime Data
 
 This web application predicts the **category** and **sub-category** of a crime based on the provided crime description. The application uses machine learning models trained on crime data, processes input text, and returns the corresponding predictions. It is built using **Flask**, **Scikit-learn**, and **LangChain**.
 
