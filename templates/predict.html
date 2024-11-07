@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+        .card-body {
+            background-color: #f1f1f1;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .result-container {
+            background-color: #e8f4fc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #b8daff;
+        }
+        .result-container p {
+            font-size: 18px;
+            color: #333;
+        }
+        .result-container h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8"> 
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>Fraud Category Prediction</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="message">Enter Message:</label>
+                                <textarea id="message" name="message" rows="4" class="form-control" placeholder="Type your message here">{{ message }}</textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+ 
+                {% if category and sub_category %}
+                    <div class="result-container mt-4">
+                        <h2>Prediction Results:</h2>
+                        <p><strong>Category:</strong> {{ category }}</p>
+                        <p><strong>Sub-Category:</strong> {{ sub_category }}</p>
+                    </div>
+                {% elif category %}
+                    <div class="result-container mt-4">
+                        <h2>Prediction Results:</h2>
+                        <p><strong>Category:</strong> {{ category }}</p>
+                        <p><strong>Sub-Category:</strong> None</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
